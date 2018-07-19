@@ -249,6 +249,10 @@ class Api
             ]
         ]);
 
+        if(!isset($result->GetPackagesResult->ResultData->MyApiPackageOut)) {
+            throw new \Exception("Neexistuje žádný detail balíku.");
+        }
+
         return $result->GetPackagesResult->ResultData->MyApiPackageOut;
     }
 
